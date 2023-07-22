@@ -1,7 +1,9 @@
 import express from "express";
+import configObj from "./config/index.js";
 
 const app = express();
-const PORT = process.env.NODE_PORT || 3000;
+
+const config = configObj[process.env.NODE_ENV];
 
 app.use(express.json());
 
@@ -12,6 +14,7 @@ app.get("/", (req, res) => {
   });
 });
 
+const PORT = process.env.NODE_PORT || config.port;
 app.listen(PORT, () => {
-  console.log(`Server is listening to PORT ${PORT}`);
+  console.log(`Server is listening on PORT ${PORT}`);
 });
