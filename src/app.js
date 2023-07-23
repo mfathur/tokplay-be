@@ -1,9 +1,12 @@
 import express from "express";
 import configObj from "./config/index.js";
-
-const app = express();
+import { connectToMongoDb } from "./config/db.js";
 
 const config = configObj[process.env.NODE_ENV];
+
+connectToMongoDb(config.mongodb_uri);
+
+const app = express();
 
 app.use(express.json());
 
