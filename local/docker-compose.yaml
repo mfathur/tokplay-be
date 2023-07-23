@@ -2,9 +2,9 @@ version: "3.7"
 
 services:
   tokplay-node:
-    build: ../
     ports:
       - "3000:3000"
+    build: ../
     env_file:
       - ../.env
     environment:
@@ -13,15 +13,16 @@ services:
       - ../src:/www/src
     networks:
       - tokplay
+    command: npm run dev
     depends_on:
       - tokplay-mongo
 
-    command: npm run dev
-
   tokplay-mongo:
-    image: mongodb/mongodb-community-server:6.0.8-ubuntu2204-20230716T062229Z
+    image: mongo:6.0.8
     ports:
       - "27017:27017"
+    volumes:
+      - ./_data/mongo:/data/db
     networks:
       - tokplay
 
