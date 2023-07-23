@@ -1,6 +1,8 @@
 import express from "express";
 import configObj from "./config/index.js";
 import { connectToMongoDb } from "./config/db.js";
+import { errorHandler } from "./utils/errorHandler.js";
+import { errorLogger } from "./utils/errorLogger.js";
 
 const config = configObj[process.env.NODE_ENV];
 
@@ -16,6 +18,9 @@ app.get("/", (req, res) => {
     message: "Hello from Tokopedia Play Clone Server",
   });
 });
+
+app.use(errorLogger);
+app.use(errorHandler);
 
 const PORT = process.env.NODE_PORT || config.port;
 app.listen(PORT, () => {
