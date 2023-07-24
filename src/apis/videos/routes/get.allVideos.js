@@ -1,6 +1,6 @@
 import express from "express";
 import { VideoService } from "../service.js";
-import { Video } from "../model.js";
+import { Video } from "../models/video.js";
 
 const router = express.Router();
 

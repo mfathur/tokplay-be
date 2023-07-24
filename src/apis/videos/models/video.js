@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import { CommentSchema } from "./comment";
+import { CommentSchema } from "./comment.js";
 
 const VideoSchema = new mongoose.Schema({
   thumbnailUrl: {
