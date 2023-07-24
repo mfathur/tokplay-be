@@ -12,4 +12,12 @@ export class VideoService {
 
     return await this.model.find();
   }
+
+  async getCommentsBy(videoId) {
+    const selectedVideo = await this.model
+      .findOne({ _id: videoId })
+      .select({ comments: 1, _id: 0 });
+
+    return selectedVideo.comments;
+  }
 }
