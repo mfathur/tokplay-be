@@ -3,6 +3,7 @@ import configObj from "./config/index.js";
 import { connectToMongoDb } from "./config/db.js";
 import { errorHandler } from "./utils/errorHandler.js";
 import { errorLogger } from "./utils/errorLogger.js";
+import apis from "./apis/index.js";
 
 const config = configObj[process.env.NODE_ENV];
 
@@ -18,6 +19,8 @@ app.get("/", (req, res) => {
     message: "Hello from Tokopedia Play Clone Server",
   });
 });
+
+apis(app);
 
 app.use(errorLogger);
 app.use(errorHandler);
