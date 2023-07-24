@@ -10,6 +10,10 @@ const VideoSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  merchant: {
+    type: String,
+    required: true,
+  },
   link: {
     type: String,
     required: true,
