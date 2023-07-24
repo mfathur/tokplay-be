@@ -20,4 +20,11 @@ export class VideoService {
 
     return selectedVideo.comments;
   }
+
+  async insertComment(videoId, username, comment) {
+    await this.model.findOneAndUpdate(
+      { _id: videoId },
+      { $push: { comments: { username: username, comment: comment } } }
+    );
+  }
 }
