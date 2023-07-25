@@ -1,9 +1,9 @@
 import express from "express";
 import { VideoService } from "../service.js";
 import { Video } from "../models/video.js";
-import { checkPostCommentBodyRequest } from "../middleware.js";
 import { checkRequestError } from "../../../utils/checkRequestError.js";
 import { authenticateJWT } from "../../auth/middlewares/authenticateJWT.js";
+import { checkPostCommentBodyRequest } from "../middlewares/validationRules.js";
 
 const router = express.Router();
 
