@@ -1,6 +1,8 @@
 import express from "express";
 import { VideoService } from "../service.js";
 import { Video } from "../models/video.js";
+import { checkPostCommentBodyRequest } from "../middleware.js";
+import { checkRequestError } from "../../../utils/checkRequestError.js";
 
 const router = express.Router();
 
@@ -23,5 +25,7 @@ const postVideoCommentAction = (_videoService) => async (req, res, next) => {
 
 export const postVideoComment = router.post(
   "/:videoId/comments",
+  checkPostCommentBodyRequest(),
+  checkRequestError,
   postVideoCommentAction(new VideoService(Video))
 );
