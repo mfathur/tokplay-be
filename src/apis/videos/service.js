@@ -1,3 +1,5 @@
+import { NotFoundError } from "../../utils/errors/NotFoundError.js";
+
 export class VideoService {
   constructor(model) {
     this.model = model;
@@ -17,6 +19,10 @@ export class VideoService {
     const selectedVideo = await this.model
       .findOne({ _id: videoId })
       .select({ comments: 1, _id: 0 });
+
+    if (!selectedVideo) {
+      throw new NotFoundError("Video not found");
+    }
 
     return selectedVideo.comments;
   }
