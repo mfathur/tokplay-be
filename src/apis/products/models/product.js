@@ -9,8 +9,25 @@ const ProductSchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
+  imgUrl: {
+    type: String,
+    required: true,
+  },
   relatedVideoIds: {
     type: [String],
+  },
+  discount: {
+    type: Number,
+    default: 0,
+  },
+  rating: {
+    type: Number,
+    range: [0, 5],
+    default: 0,
+  },
+  sold_amount: {
+    type: Number,
+    default: 0,
   },
 });
 
