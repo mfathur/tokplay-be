@@ -25,7 +25,7 @@ const ProductSchema = new mongoose.Schema({
     range: [0, 5],
     default: 0,
   },
-  sold_amount: {
+  soldAmount: {
     type: Number,
     default: 0,
   },
