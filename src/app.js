@@ -1,4 +1,5 @@
 import express from "express";
+import cors from "cors";
 import configObj from "./config/index.js";
 import { connectToMongoDb } from "./config/db.js";
 import { errorHandler } from "./utils/errorHandler.js";
@@ -10,6 +11,14 @@ const config = configObj[process.env.NODE_ENV];
 connectToMongoDb(config.mongodb_uri);
 
 const app = express();
+
+app.options("*", cors());
+app.use(
+  cors({
+    origin: config.corsOrigin,
+    exposedHeaders: config.corsHeader,
+  })
+);
 
 app.use(express.json());
 
