@@ -27,7 +27,7 @@ This is a clone of the Tokopedia Play app for Generasi Gigih 3.0 final project. 
 
 You can download this [file](https://drive.google.com/file/d/1LsUyM3Phk5-zZF-jM4URsXDIKyUmSdnR/view?usp=sharing). Then, you can import the file into postman to view the documentation of each API endpoints. If you still have no idea on how to import the file to postman, you can follow the instruction [here](https://learning.postman.com/docs/getting-started/importing-and-exporting/importing-data/).
 
-## **How to run**
+## **How to run locally**
 
 ### **1. Create `.env` file in root directory and copy the snippet below**
 
