@@ -1,8 +1,8 @@
-# **tokplay-be**
+# **Tokopedia Play Clone - Backend**
 
 Developed by GG3FSGP0426_Muhammad Fathurrohman
 
-This is a clone of the Tokopedia Play app for Generasi Gigih 3.0 Mid term. This repo consists of a backend application built with NodeJS Express and MongoDB as its database. Both the app and the database are containerized using docker.
+This is a clone of the Tokopedia Play app for Generasi Gigih 3.0 final project. This repo consists of a backend application built with NodeJS Express and MongoDB as its database. Both the app and the database are containerized using docker.
 
 ## **Requirement**
 
