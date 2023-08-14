@@ -6,7 +6,7 @@ export default {
     corsOrigin: "*",
   },
   production: {
-    port: 80,
+    port: 3004,
     mongodb_uri: process.env.MONGODB_URI,
     corsHeader: ["Link", "Content-Disposition"],
     corsOrigin: /\.vercel\.app/,
