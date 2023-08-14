@@ -80,5 +80,5 @@ docker exec -it local-tokplay-mongo-1  mongorestore --db tokplaydb --verbose /du
 Server is running, so you can open your browser and type this url to check.
 
 ```
-http://localhost:3000/
+http://localhost:8080/
 ```
