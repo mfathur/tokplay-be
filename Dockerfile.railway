@@ -7,9 +7,9 @@ RUN cd /www; npm install
 
 WORKDIR /www
 
-ENV PORT=3004
+ENV PORT=80
 
-EXPOSE 3004
+EXPOSE 80
 
 CMD [ "npm","start"]
 
