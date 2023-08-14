@@ -1,6 +1,7 @@
 import express from "express";
 import http from "http";
 import cors from "cors";
+import morgan from "morgan";
 import configObj from "./config/index.js";
 import { connectToMongoDb } from "./config/db.js";
 import { errorHandler } from "./utils/errorHandler.js";
@@ -21,6 +22,8 @@ app.use(
     exposedHeaders: config.corsHeader,
   })
 );
+
+app.use(morgan("tiny"));
 
 app.use(express.json());
 
