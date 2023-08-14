@@ -24,7 +24,10 @@ export class VideoService {
       throw new NotFoundError("Video not found");
     }
 
-    return selectedVideo.comments;
+    const comments = selectedVideo.comments.sort(
+      (a, b) => b.createdAt - a.createdAt
+    );
+    return comments;
   }
 
   async insertComment(videoId, username, comment) {
