@@ -38,5 +38,5 @@ app.use(errorHandler);
 
 const PORT = process.env.NODE_PORT || config.port;
 app.server.listen(PORT, () => {
-  console.log(`Server is listening on PORT ${PORT}`);
+  console.log(`Server is listening on PORT ${app.server.address().port}`);
 });
