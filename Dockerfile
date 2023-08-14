@@ -7,6 +7,6 @@ RUN cd /www; npm install
 
 WORKDIR /www
 
-ENV PORT=3000
+ENV PORT 80
 
-EXPOSE 3000
+EXPOSE 80
