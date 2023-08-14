@@ -1,4 +1,5 @@
 import express from "express";
+import http from "http";
 import cors from "cors";
 import configObj from "./config/index.js";
 import { connectToMongoDb } from "./config/db.js";
@@ -11,6 +12,7 @@ const config = configObj[process.env.NODE_ENV];
 connectToMongoDb(config.mongodb_uri);
 
 const app = express();
+app.server = http.createServer(app);
 
 app.options("*", cors());
 app.use(
@@ -34,7 +36,7 @@ apis(app);
 app.use(errorLogger);
 app.use(errorHandler);
 
-const PORT = config.port || process.env.NODE_PORT;
-app.listen(PORT, () => {
+const PORT = process.env.NODE_PORT || config.port;
+app.server.listen(PORT, () => {
   console.log(`Server is listening on PORT ${PORT}`);
 });
