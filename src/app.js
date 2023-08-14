@@ -34,7 +34,7 @@ apis(app);
 app.use(errorLogger);
 app.use(errorHandler);
 
-const PORT = process.env.NODE_PORT || config.port;
+const PORT = config.port || process.env.NODE_PORT;
 app.listen(PORT, () => {
   console.log(`Server is listening on PORT ${PORT}`);
 });
